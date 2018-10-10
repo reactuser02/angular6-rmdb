@@ -1,0 +1,15 @@
+<div class="rmdb-grid">
+  <h1>{{header}}</h1>
+  <div class="rmdb-grid-content">
+    <div *ngFor="let movie of movies" class="rmdb-grid-element">
+      <app-movie-thumb [movie]="movie">
+      </app-movie-thumb>
+    </div>
+
+    <div *ngFor="let actor of actors" class="rmdb-grid-element">
+      <app-actor [actor]="actor">
+      </app-actor>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<app-navigation *ngIf="movie" [movie]="movie.title"></app-navigation>
+
+<app-movie-info *ngIf="movie" [movie]="movie" [directors]="directors">
+</app-movie-info>
+
+<app-movie-info-bar *ngIf="movie" [time]="movie.runtime" [budget]="movie.budget" [revenue]="movie.revenue"></app-movie-info-bar>
+
+<app-four-col-grid [header]="'Actors'" *ngIf="actors" [actors]="actors">
+</app-four-col-grid>
+
+<h1 *ngIf="!actors && !loading">
+    No Movie found
+</h1>
+
+<app-spinner *ngIf="loading">
+</app-spinner>

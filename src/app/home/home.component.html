@@ -1,0 +1,15 @@
+<div class="rmdb-home">
+    <ng-container *ngIf="heroImage">
+        <app-hero-image [image]="heroImage.image" [title]="heroImage.original_title" [text]="heroImage.overview"></app-hero-image>
+        <app-search-bar (search)="searchItems($event)"></app-search-bar>
+    </ng-container>
+
+    <app-spinner *ngIf="loading">
+    </app-spinner>
+
+    <app-four-col-grid [header]="searchTerm ? 'Search Results' : 'Popular Movies'" [loading]="loading" [movies]="movies"
+        [searchTerm]="searchTerm">
+    </app-four-col-grid>
+
+    <app-load-more-btn *ngIf="!loading && currentPage <= totalPages && this.heroImage" (loadMoreItems)="loadMoreItems()"></app-load-more-btn>
+</div>

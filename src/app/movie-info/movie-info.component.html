@@ -1,0 +1,26 @@
+<div class="rmdb-movieinfo" [ngStyle]="{'background': movie.backdrop_path ? 'url('  + basePath + movie.backdrop_path + ')' : '#000'}">
+  <div class="rmdb-movieinfo-content">
+    <div class="rmdb-movieinfo-thumb">
+      <app-movie-thumb [movie]="movie"></app-movie-thumb>
+    </div>
+    <div class="rmdb-movieinfo-text">
+      <h1>{{movie.title}}</h1>
+      <h3>PLOT</h3>
+      <p>{{movie.overview}}</p>
+      <h3>IMDB Rating</h3>
+      <div class="rmdb-rating">
+        <meter min="0" max="100" optimum="100" low="40" high="70" value="{{movie.vote_average * 10}}"></meter>
+        <p class="
+          rmdb-score">{{movie.vote_average}}</p>
+      </div>
+      <h3>
+        DIRECTOR
+        {{directors.length > 1 ? 'S': ''}}
+      </h3>
+      <p class="rmdb-director" *ngFor="let director of directors">
+        {{director.name}}
+      </p>
+    </div>
+    <i class="fa fa-film fa-5x fa-file"></i>
+  </div>
+</div>
